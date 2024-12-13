@@ -16,6 +16,7 @@ class StoreOrderService
         $price = $product->price;
         $totalPrice = $dto->quantity * $price;
 
+        dd($dto);
         OrderIssued::dispatch([
             'product_id' => $dto->product_id,
             'quantity' => $dto->quantity,
