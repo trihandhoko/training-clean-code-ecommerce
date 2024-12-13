@@ -3,63 +3,50 @@
 namespace App\Http\Controllers\Api;
 
 use App\Domains\Products\Services\GetProductService;
+use App\Domains\Products\Services\StoreProductService;
+use App\Domains\Products\DTO\ProductDTO;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Products\StoreProductRequest;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
-    protected $productService;
+    protected $getProductService;
+    protected $storeProductService;
 
-    public function __construct(GetProductService $productService)
+    public function __construct(GetProductService $getProductService, StoreProductService $storeProductService)
     {
-        $this->productService = $productService;
+        $this->getProductService = $getProductService;
+        $this->storeProductService = $storeProductService;
     }
 
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-        $products = $this->productService->getProducts();
-
+        $products = $this->getProductService->getProducts();
         return response()->json($products);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(StoreProductRequest $request)
     {
         //1 validate menggunakan request
-
+        $validated = $request->validated();
         //2. store dengna service store product
-        $store = $this->storeProductService($request);
-
+        $this->storeProductService->create(ProductDTO::fromArray($validated));
 
         //3. return message success
         return response()->json(['message' => "Store success"]);
     }
 
-    /**
-     * Display the specified resource.
-     */
     public function show(string $id)
     {
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(Request $request, string $id)
     {
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(string $id)
     {
         //
