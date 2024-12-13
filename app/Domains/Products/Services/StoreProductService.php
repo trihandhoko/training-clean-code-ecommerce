@@ -20,6 +20,4 @@ class StoreProductService
         
         return $product->update($productDTO->toArray());
     }
-
-    private function generateSKU() {}
 }

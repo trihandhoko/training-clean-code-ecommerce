@@ -36,7 +36,6 @@ class ProductController extends Controller
 
     public function store(StoreProductRequest $request)
     {
-        //1 validate menggunakan request
         $validated = $request->validated();
         
         $this->storeProductService->create(ProductDTO::fromArray($validated));
