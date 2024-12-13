@@ -2,8 +2,8 @@
 
 namespace App\Domains\Products\Services;
 
-use App\Domains\Products\Models\Products;
 use App\Domains\Products\DTO\ProductDTO;
+use App\Domains\Products\Models\Products;
 
 class StoreProductService
 {
@@ -17,7 +17,7 @@ class StoreProductService
     {
 
         $product = Products::find($id);
-        
+
         return $product->update($productDTO->toArray());
     }
 }

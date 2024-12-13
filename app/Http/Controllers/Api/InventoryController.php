@@ -21,6 +21,7 @@ class InventoryController extends Controller
     {
         $validated = $request->validated();
         $this->addInventoriesService->create(InventoryDTO::fromArray($validated));
-        return response()->json(['message' => "Add inventory success"]);
+
+        return response()->json(['message' => 'Add inventory success']);
     }
 }

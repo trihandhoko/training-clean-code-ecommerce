@@ -32,7 +32,7 @@ class InventoryCommand extends Command
     /**
      * Create a new command instance.
      *
-     * @param GetProductService $getProductService
+     * @param  GetProductService  $getProductService
      */
     public function __construct(AddInventoryService $addInventoryService)
     {

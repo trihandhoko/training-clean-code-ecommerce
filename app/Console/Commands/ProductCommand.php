@@ -2,10 +2,10 @@
 
 namespace App\Console\Commands;
 
-use Illuminate\Console\Command;
+use App\Domains\Products\DTO\ProductDTO;
 use App\Domains\Products\Services\GetProductService;
 use App\Domains\Products\Services\StoreProductService;
-use App\Domains\Products\DTO\ProductDTO;
+use Illuminate\Console\Command;
 
 class ProductCommand extends Command
 {
@@ -29,12 +29,11 @@ class ProductCommand extends Command
      * @var GetProductService
      */
     protected $getProductService;
+
     protected $storeProductService;
 
     /**
      * Create a new command instance.
-     *
-     * @param GetProductService $getProductService
      */
     public function __construct(GetProductService $getProductService, StoreProductService $storeProductService)
     {

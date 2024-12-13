@@ -3,7 +3,6 @@
 namespace App\Domains\Products\Services;
 
 use App\Domains\Products\Models\Products;
-use App\Domains\Products\DTO\ProductDTO;
 
 class DeleteProductService
 {

@@ -5,6 +5,7 @@ namespace App\Domains\Orders\DTO;
 class OrderDTO
 {
     public int $product_id;
+
     public int $quantity;
 
     public function __construct(int $product_id, int $quantity)

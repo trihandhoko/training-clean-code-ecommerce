@@ -4,7 +4,6 @@ namespace App\Domains\Inventories\Services;
 
 use App\Domains\Inventories\DTO\InventoryDTO;
 use App\Domains\Inventories\Models\Inventories;
-use Exception;
 
 class IssueInventoryService
 {
