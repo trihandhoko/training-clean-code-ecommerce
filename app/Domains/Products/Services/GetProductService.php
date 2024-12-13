@@ -20,8 +20,6 @@ class GetProductService
     
     public function getProductById(int $id)
     {
-        return $this->httpClient
-            ->get('products', $data->toArray())
-            ->map(fn (array $product) => ProductData::fromArray($product));
+        return Products::find($id);
     }
 }

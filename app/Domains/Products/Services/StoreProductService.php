@@ -13,5 +13,13 @@ class StoreProductService
         return Products::create($productDTO->toArray());
     }
 
+    public function update(ProductDTO $productDTO, int $id): bool
+    {
+
+        $product = Products::find($id);
+        
+        return $product->update($productDTO->toArray());
+    }
+
     private function generateSKU() {}
 }
