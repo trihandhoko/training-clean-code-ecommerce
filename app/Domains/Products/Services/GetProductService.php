@@ -4,7 +4,7 @@ namespace App\Domains\Products\Services;
 
 use App\Domains\Products\Models\Products;
 
-class GetProductsService
+class GetProductService
 {
     public function __construct(
         public ?string $sortBy,
@@ -13,12 +13,12 @@ class GetProductsService
     ) {
     }
     
-    public function getProducts(): Collection
+    public function getProducts()
     {
         return Products::all();
     }
     
-    public function getProductById(int $id): Collection
+    public function getProductById(int $id)
     {
         return $this->httpClient
             ->get('products', $data->toArray())
