@@ -10,14 +10,13 @@ class GetProductService
         public ?string $sortBy,
         public ?string $sortDirection,
         public ?string $searchTerm
-    ) {
-    }
-    
+    ) {}
+
     public function getProducts()
     {
         return Products::all();
     }
-    
+
     public function getProductById(int $id)
     {
         return Products::find($id);

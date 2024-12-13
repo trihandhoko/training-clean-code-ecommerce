@@ -2,9 +2,9 @@
 
 namespace App\Domains\Orders\Services;
 
+use App\Domains\Orders\DTO\OrderDTO;
 use App\Domains\Orders\Models\Orders;
 use App\Domains\Products\Models\Products;
-use App\Domains\Orders\DTO\OrderDTO;
 use App\Events\OrderIssued;
 
 class StoreOrderService

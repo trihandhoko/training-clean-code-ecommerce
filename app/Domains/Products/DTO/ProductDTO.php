@@ -5,7 +5,9 @@ namespace App\Domains\Products\DTO;
 class ProductDTO
 {
     public string $name;
+
     public string $description;
+
     public float $price;
 
     public function __construct(string $name, string $description, float $price)

@@ -5,6 +5,7 @@ namespace App\Domains\Inventories\DTO;
 class InventoryDTO
 {
     public string $product_id;
+
     public string $quantity;
 
     public function __construct(string $product_id, int $quantity)
