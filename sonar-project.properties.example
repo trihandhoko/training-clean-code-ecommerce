@@ -1,0 +1,3 @@
+sonar.projectKey=randy-ihsan-ecommerce
+sonar.sources=app
+sonar.php.coverage.reportPaths=coverage.xml
