@@ -29,6 +29,7 @@ class ProductCommand extends Command
      * @var GetProductService
      */
     protected $getProductService;
+    protected $storeProductService;
 
     /**
      * Create a new command instance.
