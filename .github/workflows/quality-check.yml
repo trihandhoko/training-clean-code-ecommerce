@@ -16,7 +16,7 @@ jobs:
 
     steps:
       - name: Clone Repository
-        run: cd /var/www && rm -rf html && git clone https://github.com/ilham98/clean-code-calculator.git html && cd html && ls
+        run: cd /var/www && rm -rf html && git clone https://github.com/trihandhoko/training-clean-code-ecommerce.git html && cd html && ls
 
       - name: Verify Clone
         run: |
