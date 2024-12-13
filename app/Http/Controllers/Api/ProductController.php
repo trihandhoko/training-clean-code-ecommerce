@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Domains\Products\Models\Products;
+use App\Domains\Products\Services\GetProductService;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Products\StoreProductRequest;
 use Illuminate\Http\Request;
@@ -11,7 +11,7 @@ class ProductController extends Controller
 {
     protected $productService;
 
-    public function __construct(ProductService $productService)
+    public function __construct(GetProductService $productService)
     {
         $this->productService = $productService;
     }
@@ -27,19 +27,18 @@ class ProductController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
      * Store a newly created resource in storage.
      */
     public function store(StoreProductRequest $request)
     {
-        //
+        //1 validate menggunakan request
+
+        //2. store dengna service store product
+        $store = $this->storeProductService($request);
+
+
+        //3. return message success
+        return response()->json(['message' => "Store success"]);
     }
 
     /**
