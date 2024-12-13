@@ -30,12 +30,8 @@ class ProductController extends Controller
 
     public function store(StoreProductRequest $request)
     {
-        //1 validate menggunakan request
         $validated = $request->validated();
-        //2. store dengna service store product
         $this->storeProductService->create(ProductDTO::fromArray($validated));
-
-        //3. return message success
         return response()->json(['message' => "Store success"]);
     }
 

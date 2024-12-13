@@ -12,6 +12,4 @@ class StoreProductService
 
         return Products::create($productDTO->toArray());
     }
-
-    private function generateSKU() {}
 }
