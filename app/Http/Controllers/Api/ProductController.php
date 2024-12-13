@@ -9,12 +9,29 @@ use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
+    protected $productService;
+
+    public function __construct(ProductService $productService)
+    {
+        $this->productService = $productService;
+    }
+
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return Products::query()->paginate();
+        $products = $this->productService->getProducts();
+
+        return response()->json($products);
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     */
+    public function create()
+    {
+        //
     }
 
     /**
