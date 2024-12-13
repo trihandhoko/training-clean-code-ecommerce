@@ -15,6 +15,7 @@ class ProductController extends Controller
 {
     protected $getProductService;
     protected $storeProductService;
+    protected $deleteProductService;
 
     public function __construct(
         GetProductService $getProductService, 
